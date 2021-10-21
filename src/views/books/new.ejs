@@ -6,10 +6,14 @@
 
     <main class="container">
       <!-- if msg is set, display it as a mesage confirming success -->
-      <% if (locals.feedback) { %>
-        <div class="feedback <%= feedback.kind %> ">
-          <%= feedback.msg %>
+      <% if (locals.feedback && feedback.error) { %>
+        <div class="feedback error ">
+          <%= feedback.error %>
         </div>
+        <% } else if (locals.feedback && feedback.msg)  {
+          <div class="feedback success ">
+            <%= feedback.msg %>
+            </div>
         <% } %>
           <!-- <div class="feedback error"> This is a error </div> -->
           <h1>Add new book</h1>
