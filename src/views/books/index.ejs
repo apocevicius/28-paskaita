@@ -1,0 +1,27 @@
+<%- include('../partials/head') %>
+<!-- we get data {title: Books page, books: [all books array]} -->
+
+  <!-- include header -->
+  <%- include('../partials/header') %>
+
+  <main class="container">
+      <h1>Welcome to our books page</h1>
+    <hr>
+    
+    <h3>Our current books List</h3>
+    <!-- loop to get all books titles -->
+    <ol class="books-list">
+      <% books.forEach(book => { %>
+        <li>
+        <%- `<strong>Title:</strong> ${book.title} - Written by: ${book.author}` %>     
+        </li>
+    <% }) %> 
+    </ol>
+    <hr>
+    
+    <h3>Our books in card form</h3>
+
+    
+  </main>
+
+  <%- include('../partials/footer') %>
